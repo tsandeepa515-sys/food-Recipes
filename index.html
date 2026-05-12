@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foodie Master Recipes - Delicious homemade recipes from around the world. Find breakfast, lunch, dinner, desserts and more.">
+    <meta name="keywords" content="recipes, food, cooking, breakfast, lunch, dinner, desserts, healthy meals, drinks">
+    <meta name="author" content="Foodie Master Recipes">
+    <title>Foodie Master Recipes | Delicious Homemade Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading delicious recipes...</p>
+        </div>
+    </div>
+
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Foodie Master</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#recipes" class="nav-link">Recipes</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#recipes" class="mobile-nav-link">Recipes</a></li>
+            <li><a href="#categories" class="mobile-nav-link">Categories</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Foodie Master Recipes</h1>
+            <p class="hero-subtitle">Delicious homemade recipes from around the world.</p>
+            <div class="hero-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="heroSearch" placeholder="Search recipes (e.g., pasta, chicken, cake...)" autocomplete="off">
+                    <button id="heroSearchBtn" class="search-btn">Search</button>
+                </div>
+            </div>
+            <a href="#recipes" class="cta-btn">
+                <span>Explore Recipes</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <section id="categories" class="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Browse By</span>
+                <h2 class="section-title">Recipe Categories</h2>
+                <p class="section-desc">Find the perfect recipe for any meal or occasion</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="breakfast">
+                    <div class="category-icon"><i class="fas fa-coffee"></i></div>
+                    <h3>Breakfast</h3><p>Start your day right</p><span class="category-count">24 Recipes</span>
+                </div>
+                <div class="category-card" data-category="lunch">
+                    <div class="category-icon"><i class="fas fa-hamburger"></i></div>
+                    <h3>Lunch</h3><p>Midday masterpieces</p><span class="category-count">31 Recipes</span>
+                </div>
+                <div class="category-card" data-category="dinner">
+                    <div class="category-icon"><i class="fas fa-drumstick-bite"></i></div>
+                    <h3>Dinner</h3><p>Evening delights</p><span class="category-count">45 Recipes</span>
+                </div>
+                <div class="category-card" data-category="desserts">
+                    <div class="category-icon"><i class="fas fa-ice-cream"></i></div>
+                    <h3>Desserts</h3><p>Sweet indulgences</p><span class="category-count">28 Recipes</span>
+                </div>
+                <div class="category-card" data-category="healthy">
+                    <div class="category-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Healthy Meals</h3><p>Nutritious & delicious</p><span class="category-count">19 Recipes</span>
+                </div>
+                <div class="category-card" data-category="drinks">
+                    <div class="category-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Drinks</h3><p>Refreshing beverages</p><span class="category-count">16 Recipes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recipes" class="featured-recipes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Handpicked</span>
+                <h2 class="section-title">Featured Recipes</h2>
+                <p class="section-desc">Our most loved and trending recipes this week</p>
+            </div>
+            <div class="recipes-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                <button class="filter-btn" data-filter="lunch">Lunch</button>
+                <button class="filter-btn" data-filter="dinner">Dinner</button>
+                <button class="filter-btn" data-filter="desserts">Desserts</button>
+                <button class="filter-btn" data-filter="healthy">Healthy</button>
+            </div>
+            <div class="recipes-grid" id="recipesGrid"></div>
+            <div class="no-results" id="noResults" style="display:none;">
+                <i class="fas fa-search"></i>
+                <h3>No recipes found</h3>
+                <p>Try searching for something else or browse our categories</p>
+            </div>
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Recipes</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="trending-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Trending Now</span>
+                <h2 class="section-title">What's Hot This Week</h2>
+                <p class="section-desc">Recipes everyone is talking about</p>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack"></div>
+                </div>
+                <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=700&fit=crop" alt="Chef preparing food">
+                    <div class="about-badge"><span class="about-badge-number">500+</span><span class="about-badge-text">Recipes</span></div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Passion for Cooking,<br>Love for Food</h2>
+                    <p>Foodie Master Recipes is your ultimate destination for discovering, creating, and sharing incredible homemade dishes. Founded by a team of passionate food enthusiasts and professional chefs, we believe that great cooking should be accessible to everyone.</p>
+                    <p>Our carefully curated collection spans cuisines from every corner of the globe — from hearty Italian pastas and fragrant Indian curries to delicate French pastries and vibrant Mexican street food.</p>
+                    <div class="about-stats">
+                        <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Recipes</span></div>
+                        <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Cuisines</span></div>
+                        <div class="stat-item"><span class="stat-number">10K+</span><span class="stat-label">Happy Cooks</span></div>
+                    </div>
+                    <a href="#recipes" class="about-btn">Browse Recipes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Our Cooks Say</h2>
+                <p class="section-desc">Real stories from our amazing community</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The pasta carbonara recipe changed my life! My family now requests it every weekend. The step-by-step instructions are so clear and easy to follow."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah Mitchell">
+                        <div class="author-info"><h4>Sarah Mitchell</h4><span>Home Cook</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I never thought I could bake a perfect sourdough until I found Foodie Master. The detailed instructions and tips made it possible on my first try!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="James Rodriguez">
+                        <div class="author-info"><h4>James Rodriguez</h4><span>Baking Enthusiast</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"As a busy professional, I love the healthy meal prep recipes. They save me so much time during the week and taste absolutely amazing."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emily Chen">
+                        <div class="author-info"><h4>Emily Chen</h4><span>Food Blogger</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newsletter-bg"></div>
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h2>Get Fresh Recipes Weekly</h2>
+                <p>Join 50,000+ food lovers and receive our best recipes, cooking tips, and exclusive content directly to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-btn"><span>Subscribe</span><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <p class="newsletter-note">No spam, unsubscribe anytime. We respect your privacy.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">Have a question or recipe suggestion? We'd love to hear from you!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details"><h4>Visit Us</h4><p>123 Culinary Lane, Foodie District<br>New York, NY 10001</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details"><h4>Email Us</h4><p>hello@foodiemaster.com<br>recipes@foodiemaster.com</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-details"><h4>Call Us</h4><p>+1 (555) 123-4567<br>Mon - Fri, 9am - 6pm</p></div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group"><label for="contactName">Your Name</label><input type="text" id="contactName" placeholder="John Doe" required></div>
+                            <div class="form-group"><label for="contactEmail">Your Email</label><input type="email" id="contactEmail" placeholder="john@example.com" required></div>
+                        </div>
+                        <div class="form-group"><label for="contactSubject">Subject</label><input type="text" id="contactSubject" placeholder="Recipe suggestion" required></div>
+                        <div class="form-group"><label for="contactMessage">Message</label><textarea id="contactMessage" rows="5" placeholder="Your message..." required></textarea></div>
+                        <button type="submit" class="contact-submit-btn"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo"><i class="fas fa-utensils"></i><span>Foodie Master</span></a>
+                    <p>Your trusted source for delicious, tested, and easy-to-follow recipes from around the world.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recipes">Recipes</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" data-category="breakfast">Breakfast</a></li>
+                        <li><a href="#" data-category="lunch">Lunch</a></li>
+                        <li><a href="#" data-category="dinner">Dinner</a></li>
+                        <li><a href="#" data-category="desserts">Desserts</a></li>
+                        <li><a href="#" data-category="healthy">Healthy Meals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Foodie Master Recipes. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> for food lovers everywhere</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="recipe-modal" id="recipeModal">
+        <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMessage">Success!</span></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
